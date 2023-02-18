@@ -6,15 +6,25 @@ Setup:
 
 python 3.8
 ```
+py -m venv atkG-env              # create venv
+.\atkG-env\Scripts\activate      # Activating a virtual environment
+where python                     # It should be in the env directory
 pip install -r requirements.txt
+deactivate                       # Leaving the virtual environment
 ```
+Errors
+- remove coreferee & h5py's version. https://stackoverflow.com/questions/64727142/cant-install-h5py-hdf5-dll-dependency-not-found
+- Set the registry value HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem@LongPathsEnabled to 1. https://stackoverflow.com/questions/54778630/could-not-install-packages-due-to-an-environmenterror-errno-2-no-such-file-or
+- More packages to install:
+    - html2text
+    - graphviz
 
 Running :
 ```
 # Generating attack graph for CTI report
-python main.py -M attackGraphGeneration -R "./Dataset/Evaluation/Frankenstein Campaign.txt" -O ./output.pdf
+python main.py -M attackGraphGeneration -R "./Dataset/Evaluation/Frankenstein Campaign.txt" -O ./Output/Frankenstein_output.pdf
 # Identifing techniques in CTI report
-python main.py -M techniqueIdentification -T ./templates -R "./Dataset/Evaluation/Frankenstein Campaign.txt" -O ./output.pdf
+python main.py -M techniqueIdentification -T ./templates -R "./Dataset/Evaluation/Frankenstein Campaign.txt" -O ./Output/Frankenstein_output.pdf
 ```
 
 Running - Archive-v0.1 (Archive-v0.1 is the experimental version without clear code structure and comments):

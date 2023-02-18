@@ -19,7 +19,7 @@ def read_pdf(report_file: str):
 
 
 def read_txt(report_file: str) -> str:
-    with open(report_file, 'r') as txt_content:
+    with open(report_file, 'r', encoding="utf-8") as txt_content:
         txt = str(txt_content.read())
 
         return txt

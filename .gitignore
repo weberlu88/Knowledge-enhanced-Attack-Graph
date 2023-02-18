@@ -109,6 +109,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+atkG-env/
 
 # Spyder project settings
 .spyderproject
@@ -132,3 +133,6 @@ dmypy.json
 
 templates/
 new_cti.model
+
+templates.zip
+utilities/new_cti.model.zip

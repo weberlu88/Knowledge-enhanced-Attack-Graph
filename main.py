@@ -33,6 +33,7 @@ def report_parsing(text: str) -> Tuple[IoCIdentifier, Doc]:
     text_without_ioc = iid.replaced_text
 
     ner_model = IoCNer("./new_cti.model")
+    # ner_model = IoCNer()
     doc = ner_model.parse(text_without_ioc)
 
     return iid, doc
