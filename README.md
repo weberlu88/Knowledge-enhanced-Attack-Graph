@@ -12,7 +12,11 @@ where python                     # It should be in the env directory
 pip install -r requirements.txt
 deactivate                       # Leaving the virtual environment
 ```
-Errors
+More to Setup:
+    - download and unzip the model & template from gDrive. 
+    - https://drive.google.com/drive/folders/1zVGPpN-i-BLlpFqQERscFGb45PkhfkUm
+
+Errors:
 - remove coreferee & h5py's version. https://stackoverflow.com/questions/64727142/cant-install-h5py-hdf5-dll-dependency-not-found
 - Set the registry value HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem@LongPathsEnabled to 1. https://stackoverflow.com/questions/54778630/could-not-install-packages-due-to-an-environmenterror-errno-2-no-such-file-or
 - More packages to install:
