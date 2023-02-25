@@ -1,0 +1,13 @@
+The threat actors(#2 actors) sent the trojanized Microsoft Word documents, probably via email(#12 email). 
+#2 actors -> #12 email
+
+Talos discovered a document named MinutesofMeeting-2May19.docx(#17 document). 
+
+Once the victim opens the document, it fetches a remove template from the actor-controlled website(#36 actor), hxxp://droobox[.]online:80/luncher.doc(#42 url). 
+#17 document -> #42 url           -> #36 actor    這條多畫的
+             -> #55 vulnerability -> #47 document 方向畫反了，#47跟#42應該是同一個檔案
+
+Once the luncher.doc(#47 document) was downloaded, it used CVE-2017-11882(#55 vulnerability), to execute code on the victim's machine. 
+
+After the exploit, the file(#71 file) would write a series of base64-encoded PowerShell commands that acted as a stager and set up persistence by adding it to the HKCU\Software\Microsoft\Windows\CurrentVersion\Run(#68 vulnerability) Registry key.
+#71 file -> #68 vulnerability  #71跟#47跟#42 也應是同一個檔案 在原文中#71是scheduled task named "WinUpdate"不是稱作file
