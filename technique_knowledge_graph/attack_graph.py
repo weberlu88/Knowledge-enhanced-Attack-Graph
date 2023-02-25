@@ -156,6 +156,7 @@ class AttackGraph:
                                      graph_pos,
                                      edge_labels=nx.get_edge_attributes(self.attackgraph_nx, 'action'),
                                      font_size=6)
+        # print('graph_pos:', graph_pos)
 
         if image_path == "":
             plt.show()
@@ -222,7 +223,8 @@ class AttackGraph:
                     self.attackNode_dict[coref_item.root_index] = self.attackNode_dict[coref_origin]
 
                     coref_token = self.nlp_doc[coref_item.root_index]
-                    logging.debug("%s-%s" % (coref_token, coref_token.ent_type_))
+                    # commit it weber
+                    # logging.debug("%s-%s" % (coref_token, coref_token.ent_type_))
 
     def parse_dependency(self):
         logging.info("---attack graph generation: Parsing NLP doc to get Attack Graph Edges!---")
@@ -257,7 +259,7 @@ class AttackGraph:
 
         if is_related_sentence:
             self.related_sentences.append(sentence.text)
-            logging.debug("Related sentence: %s" % sentence.text)
+            # logging.debug("Related sentence: %s" % sentence.text)
 
         return self.attackgraph_nx
 

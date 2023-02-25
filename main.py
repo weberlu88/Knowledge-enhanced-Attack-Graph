@@ -49,6 +49,12 @@ def attackGraph_generating(text: str, output: str = None) -> AttackGraph:
         ag.draw(output)
         ag.to_json_file(output + "_artifacts.json")
 
+    # save nx.digraph
+    G = ag.attackgraph_nx
+    edges = G.edges.data()
+    print(edges)
+    nx.drawing.nx_pydot.write_dot(G, output + ".dot")
+
     return ag
 
 
