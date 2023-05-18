@@ -53,7 +53,8 @@ def attackGraph_generating(text: str, output: str = None) -> AttackGraph:
     G = ag.attackgraph_nx
     edges = G.edges.data()
     print(edges)
-    nx.drawing.nx_pydot.write_dot(G, output + ".dot")
+    if output is not None:
+        nx.drawing.nx_pydot.write_dot(G, output + ".dot")
 
     return ag
 

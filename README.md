@@ -31,6 +31,10 @@ python main.py -M attackGraphGeneration -R "./Dataset/Evaluation/Frankenstein Ca
 python main.py -M techniqueIdentification -T ./templates -R "./Dataset/Evaluation/Frankenstein Campaign.txt" -O ./Output/Frankenstein_output.pdf
 
 python main.py -M attackGraphGeneration -R "./Dataset/Evaluation/Frankenstein Demo.txt" -O ./Output/Fran_demo_output.pdf
+python main.py -M attackGraphGeneration -R "./Dataset/Evaluation/Dofloo-SyscallParty.txt" -O ./Output/Dofloo-SyscallParty_output.pdf
+python main.py -M attackGraphGeneration -R "./Dataset/Evaluation/report1_intezer.txt" -O ./Output/report1_intezer.pdf
+python main.py -M techniqueIdentification -T ./templates -R "./Dataset/Evaluation/report1_intezer.txt" -O ./Output/report1_intezer.pdf
+python main.py -M attackGraphGeneration -M techniqueIdentification -T ./templates -R "./Dataset/Evaluation/report2_ms.txt" -O ./Output/report2_ms
 ```
 
 Running - Archive-v0.1 (Archive-v0.1 is the experimental version without clear code structure and comments):

@@ -133,6 +133,7 @@ class AttackGraph:
     # http://sparkandshine.net/en/networkx-application-notes-a-better-way-to-visualize-graphs/
     # https://networkx.org/documentation/latest/auto_examples/drawing/plot_chess_masters.html#sphx-glr-auto-examples-drawing-plot-chess-masters-py
     def draw(self, image_path: str = "") -> figure:
+        # return
         fig_size = math.ceil(math.sqrt(self.attackgraph_nx.number_of_nodes())) * 10
         plt.subplots(figsize=(fig_size, fig_size))  # Todo: re-consider the figure size.
 
@@ -171,7 +172,7 @@ class AttackGraph:
             node_dict[nid]["nlp"] = tuple(node.nlp)
             node_dict[nid]["ioc"] = tuple(node.ioc)
 
-        json_string = json.dumps(node_dict)
+        json_string = json.dumps(node_dict, indent=4) # formate output json file
         return json_string
 
     def to_json_file(self, output_file):
